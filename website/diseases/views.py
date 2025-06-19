@@ -161,11 +161,12 @@ def delete_folder(request, folder_id):
     folder = get_object_or_404(Folder, id=folder_id)
 
     # Prevent deletion if diseases exist in this folder
-    if folder.disease_set.exists():
+    if folder.diseases.exists():
         messages.warning(request, "لا يمكنك حذف هذا المجلد لأنه يحتوي على أمراض مرتبطة به.")
     else:
         folder.delete()
         messages.success(request, "تم حذف المجلد بنجاح.")
 
-    return redirect('folders_list')  # Adjust this to your actual folder list view name
+    return redirect('disease_list')
+
 

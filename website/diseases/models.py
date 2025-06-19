@@ -15,6 +15,6 @@ class Disease(models.Model):
     best_diagnostic_test = models.TextField()
     treatment = models.TextField()
     folder = models.ForeignKey(Folder, on_delete=models.CASCADE, null=True, blank=True, related_name='diseases')
-
+    
     def __str__(self):
         return self.name

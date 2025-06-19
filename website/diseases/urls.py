@@ -11,5 +11,4 @@ urlpatterns = [
     path('download_all/', views.download_all_diseases, name='download_all_diseases'),
     path('add_folder/', views.add_folder, name='add_folder'),
     path('folders/<int:folder_id>/delete/', views.delete_folder, name='delete_folder'),
-
 ]
