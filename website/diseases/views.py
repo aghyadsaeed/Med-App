@@ -10,6 +10,7 @@ from bidi.algorithm import get_display
 import arabic_reshaper
 from .models import Disease, Folder
 from .forms import DiseaseForm, FolderForm
+from django.contrib import messages
 
 def generate_pdf(request, pk):
     disease = get_object_or_404(Disease, pk=pk)
@@ -154,3 +155,17 @@ def add_folder(request):
     else:
         form = FolderForm()
     return render(request, 'add_folder.html', {'form': form})
+
+
+def delete_folder(request, folder_id):
+    folder = get_object_or_404(Folder, id=folder_id)
+
+    # Prevent deletion if diseases exist in this folder
+    if folder.disease_set.exists():
+        messages.warning(request, "لا يمكنك حذف هذا المجلد لأنه يحتوي على أمراض مرتبطة به.")
+    else:
+        folder.delete()
+        messages.success(request, "تم حذف المجلد بنجاح.")
+
+    return redirect('folders_list')  # Adjust this to your actual folder list view name
+
