@@ -1,0 +1,30 @@
+@import url('style.css');
+
+/* Specific styles for this page */
+body {
+    background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%); /* Blue theme */
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.home-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #2193b0;
+    color: #fff;
+    padding: 10px 0;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.home-button:hover {
+    background-color: #17678d;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}

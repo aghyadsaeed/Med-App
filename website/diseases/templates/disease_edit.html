@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعديل المرض</title>
+    <link rel="stylesheet" href="{% static 'css/disease_edit.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>تعديل المرض</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-section">
+                <label for="name">اسم المرض:</label>
+                {{ form.name }}
+            </div>
+            <div class="form-section">
+                <label for="folder">المجلد:</label>
+                {{ form.folder }}
+            </div>
+            <div class="form-section">
+                <label for="clinical_story">التاريخ السريري:</label>
+                {{ form.clinical_story }}
+            </div>
+            <div class="form-section">
+                <label for="pe">الفحص السريري:</label>
+                {{ form.pe }}
+            </div>
+            <div class="form-section">
+                <label for="dd">التشخيص التفريقي:</label>
+                {{ form.dd }}
+            </div>
+            <div class="form-section">
+                <label for="complementary_investigations">الفحوصات التكميلية:</label>
+                {{ form.complementary_investigations }}
+            </div>
+            <div class="form-section">
+                <label for="best_diagnostic_test">أفضل اختبار تشخيصي:</label>
+                {{ form.best_diagnostic_test }}
+            </div>
+            <div class="form-section">
+                <label for="treatment">العلاج:</label>
+                {{ form.treatment }}
+            </div>
+            <div class="form-section">
+                <button type="submit">حفظ</button>
+            </div>
+        </form>
+        <a href="{% url 'disease_list' %}" class="home-button">الصفحة الرئيسية</a>
+    </div>
+</body>
+</html>

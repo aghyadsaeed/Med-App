@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease PDF</title>
+    <style>
+        @font-face {
+            font-family: 'Amiri';
+            src: url("{% static 'fonts/Amiri-Regular.ttf' %}") format('truetype');
+        }
+        body {
+            font-family: 'Amiri', sans-serif;
+            direction: rtl;
+            text-align: right;
+        }
+        .container {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        h1, h2 {
+            color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>مرض: {{ disease.name }}</h1>
+        <div class="section">
+            <h2>تاريخ المرض:</h2>
+            <p>{{ disease.clinical_story }}</p>
+        </div>
+        <div class="section">
+            <h2>الفحص السريري:</h2>
+            <p>{{ disease.pe }}</p>
+        </div>
+        <div class="section">
+            <h2>التشخيص التفريقي:</h2>
+            <p>{{ disease.dd }}</p>
+        </div>
+        <div class="section">
+            <h2>الفحوصات التكميلية:</h2>
+            <p>{{ disease.complementary_investigations }}</p>
+        </div>
+        <div class="section">
+            <h2>أفضل اختبار تشخيصي:</h2>
+            <p>{{ disease.best_diagnostic_test }}</p>
+        </div>
+        <div class="section">
+            <h2>العلاج:</h2>
+            <p>{{ disease.treatment }}</p>
+        </div>
+    </div>
+</body>
+</html>

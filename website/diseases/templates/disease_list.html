@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمة الأمراض</title>
+    <link rel="stylesheet" href="{% static 'css/disease_list.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>قائمة الأمراض</h1>
+        <ul class="folder-list">
+            {% for folder in folders %}
+            <li>
+                <h2>{{ folder.name }}</h2>
+                <ul class="disease-list">
+                    {% for disease in folder.diseases.all %}
+                    <li>
+                        <a href="{% url 'disease_detail' disease.pk %}">{{ disease.name }}</a>
+                        <div class="button-group">
+                            <a href="{% url 'disease_edit' disease.pk %}" class="edit-button">تعديل</a>
+                            <form method="get" action="{% url 'delete_disease' disease.pk %}" style="display: inline;">
+                                <button type="submit" class="delete-button">حذف</button>
+                            </form>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% empty %}
+            <li>لا توجد مجلدات بعد.</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'disease_new' %}" class="add-disease">إضافة مرض جديد</a>
+        <a href="{% url 'add_folder' %}" class="add-folder">إضافة مجلد جديد</a>
+        <a href="{% url 'download_all_diseases' %}" class="download-all">تحميل جميع الأمراض</a>
+        <a href="{% url 'disease_list' %}" class="home-button">الصفحة الرئيسية</a>
+    </div>
+</body>
+</html>

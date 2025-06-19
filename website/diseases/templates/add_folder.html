@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة مجلد جديد</title>
+    <link rel="stylesheet" href="{% static 'css/add_folder.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>إضافة مجلد جديد</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-section">
+                <label for="name">اسم المجلد:</label>
+                {{ form.name }}
+            </div>
+            <div class="form-section">
+                <button type="submit">إضافة</button>
+            </div>
+        </form>
+        <a href="{% url 'disease_list' %}" class="home-button">الصفحة الرئيسية</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+/* Global styles */
+body {
+    direction: rtl;
+    font-family: 'Verdana', 'sans-serif'; /* Changed to Verdana */
+    background: linear-gradient(135deg, #76b852 0%, #8dc26f 100%); /* Green and blue theme */
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1, h2, p, label {
+    font-family: 'Verdana', 'sans-serif'; /* Changed to Verdana */
+    color: #006400; /* Dark green */
+}
+
+a, button {
+    font-family: 'Verdana', 'sans-serif'; /* Changed to Verdana */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Button styles */
+button, .add-disease, .download-all, .home-button, .add-folder {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #00796b; /* Blue-green */
+    color: #fff;
+    padding: 10px 0;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover, .add-disease:hover, .download-all:hover, .home-button:hover, .add-folder:hover {
+    background-color: #004d40; /* Darker blue-green */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Form input styles */
+input, textarea, select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #e0f7fa;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}

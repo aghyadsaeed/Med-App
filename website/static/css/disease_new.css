@@ -1,0 +1,67 @@
+@import url('style.css');
+
+/* Specific styles for this page */
+.container {
+    max-width: 600px;
+}
+
+.form-section {
+    margin-bottom: 15px;
+}
+.form-section label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ff4081;
+    font-weight: bold;
+    font-size: 18px;
+}
+.form-section input,
+.form-section textarea,
+.form-section select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #ffe0b2;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}
+.form-section textarea {
+    height: 100px;
+}
+.form-section button {
+    width: 100%;
+    background-color: #ff4081;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+.form-section button:hover {
+    background-color: #c51162;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.home-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #ff4081;
+    color: #fff;
+    padding: 10px 0;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.home-button:hover {
+    background-color: #c51162;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}

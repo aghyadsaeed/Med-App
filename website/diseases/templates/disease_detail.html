@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل المرض</title>
+    <link rel="stylesheet" href="{% static 'css/disease_detail.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Disease Details</h1>
+        <p><strong>Name:</strong> {{ disease.name }}</p>
+        <p><strong>Clinical Story:</strong> {{ disease.clinical_story }}</p>
+        <p><strong>PE:</strong> {{ disease.pe }}</p>
+        <p><strong>DD:</strong> {{ disease.dd }}</p>
+        <p><strong>Complementary Investigations:</strong> {{ disease.complementary_investigations }}</p>
+        <p><strong>Best Diagnostic Test:</strong> {{ disease.best_diagnostic_test }}</p>
+        <p><strong>Treatment:</strong> {{ disease.treatment }}</p>
+        <a href="{% url 'generate_pdf' disease.pk %}">Download as PDF</a>
+        <a href="{% url 'disease_list' %}" class="home-button">الصفحة الرئيسية</a>
+    </div>
+</body>
+</html>
+
+
+

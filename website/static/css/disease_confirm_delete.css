@@ -1,0 +1,53 @@
+@import url('style.css');
+
+/* Specific styles for this page */
+body {
+    background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+}
+
+.container {
+    max-width: 600px;
+}
+
+p {
+    font-size: 16px;
+}
+
+/* Ensure buttons are displayed vertically */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Space between buttons */
+}
+
+/* Base styles for both buttons */
+.button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    border: none;
+    color: #fff;
+}
+
+/* Specific styles for delete button */
+.delete-button {
+    background-color: #e57373;
+}
+.delete-button:hover {
+    background-color: #d32f2f;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific styles for cancel button */
+.cancel-button {
+    background-color: #3d7c2d;
+}
+.cancel-button:hover {
+    background-color: #48d95b;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
